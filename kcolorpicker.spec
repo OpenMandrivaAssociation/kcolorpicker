@@ -1,3 +1,5 @@
+%define	oname		kColorPicker
+
 %define libname		%mklibname %{name} %{major}
 %define develname	%mklibname %{name} -d
 
@@ -8,7 +10,7 @@ Summary:	Qt based Color Picker with popup menu
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 URL:		https://github.com/ksnip/kColorPicker
-Source:		https://github.com/ksnip/kColorPicker/archive/v%{version}/%{name}-%{version}.tar.gz
+Source:		https://github.com/ksnip/kColorPicker/archive/v%{version}/%{oname}-%{version}.tar.gz
 
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(Qt5Core)
@@ -46,7 +48,7 @@ Header files for development with %{name}.
 #------------------------------------------------
 
 %prep
-%autosetup -p1 -n kColorPicker-%{version}
+%autosetup -p1 -n %{oname}-%{version}
 
 %build
 %cmake_qt5 \
@@ -59,10 +61,10 @@ Header files for development with %{name}.
 %files -n %{libname}
 %license LICENSE
 %doc README.md
-%{_libdir}/libkColorPicker.so.%{version}
+%{_libdir}/lib%{oname}.so.%{version}
 
 %files -n %{develname}
 %doc README.md
-%{_includedir}/kColorPicker/
-%{_libdir}/libkColorPicker.so
-%{_libdir}/cmake/kColorPicker/
+%{_includedir}/%{oname}/
+%{_libdir}/lib%{oname}.so
+%{_libdir}/cmake/%{oname}/
