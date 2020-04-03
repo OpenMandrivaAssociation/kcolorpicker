@@ -51,7 +51,7 @@ Header files for development with %{name}.
 %autosetup -p1 -n %{oname}-%{version}
 
 %build
-%cmake_qt5 \
+%cmake \
 	-DBUILD_EXAMPLE=ON
 %make_build
 
