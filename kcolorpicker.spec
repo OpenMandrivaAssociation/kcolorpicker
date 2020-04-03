@@ -1,11 +1,11 @@
 %define	oname		kColorPicker
-
+%define	major		%{version}
 %define libname		%mklibname %{name} %{major}
 %define develname	%mklibname %{name} -d
 
 Name:		kcolorpicker
 Version:	0.1.1
-Release:	1
+Release:	2
 Summary:	Qt based Color Picker with popup menu
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -62,7 +62,7 @@ Header files for development with %{name}.
 %files -n %{libname}
 %license LICENSE
 %doc README.md
-%{_libdir}/lib%{oname}.so.%{version}
+%{_libdir}/lib%{oname}.so.%{major}
 
 %files -n %{develname}
 %doc README.md
