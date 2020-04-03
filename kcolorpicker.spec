@@ -12,11 +12,12 @@ Group:		Graphical desktop/KDE
 URL:		https://github.com/ksnip/kColorPicker
 Source:		https://github.com/ksnip/kColorPicker/archive/v%{version}/%{oname}-%{version}.tar.gz
 
-BuildRequires:	cmake
-BuildRequires:	pkgconfig(Qt5Core)
-BuildRequires:	pkgconfig(Qt5Gui)
-BuildRequires:	pkgconfig(Qt5Test)
-BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires: cmake
+BuildRequires: qmake5
+BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5Gui)
+BuildRequires: pkgconfig(Qt5Test)
+BuildRequires: pkgconfig(Qt5Widgets)
 
 %description
 QToolButton with color popup menu with lets you select a color. The
