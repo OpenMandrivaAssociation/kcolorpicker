@@ -1,7 +1,7 @@
-%define	oname		kColorPicker
-%define	major		%{version}
-%define libname		%mklibname %{name} %{major}
-%define develname	%mklibname %{name} -d
+%define oname kColorPicker
+%define major %{version}
+%define libname %mklibname %{name} %{major}
+%define develname %mklibname %{name} -d
 
 Name:		kcolorpicker
 Version:	0.1.4
