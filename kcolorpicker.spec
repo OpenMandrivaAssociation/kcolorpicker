@@ -63,6 +63,7 @@ Header files for development with %{name}.
 %license LICENSE
 %doc README.md
 %{_libdir}/lib%{oname}.so.%{major}
+%{_libdir}/libkColorPicker.so.0
 
 %files -n %{develname}
 %doc README.md
