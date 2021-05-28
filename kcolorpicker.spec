@@ -4,7 +4,7 @@
 %define develname %mklibname %{name} -d
 
 Name:		kcolorpicker
-Version:	0.1.5
+Version:	0.1.6
 Release:	1
 Summary:	Qt based Color Picker with popup menu
 License:	GPLv2+
