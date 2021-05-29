@@ -62,7 +62,7 @@ Header files for development with %{name}.
 %files -n %{libname}
 %license LICENSE
 %doc README.md
-%{_libdir}/lib%{oname}.so.%{major}
+%{_libdir}/lib%{oname}.so.%{major}{,.*}
 
 %files -n %{develname}
 %doc README.md
