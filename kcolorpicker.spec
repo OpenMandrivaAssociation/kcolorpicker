@@ -1,5 +1,5 @@
-Name:		kcolorpicker
-Version:	0.3.0
+Name:		%{_lib}kColorPicker
+Version:	0.3.1
 Release:	1
 Summary:	Qt based Color Picker with popup menu
 License:	GPLv2+
@@ -7,43 +7,36 @@ Group:		Graphical desktop/KDE
 URL:		https://github.com/ksnip/kColorPicker
 Source:		https://github.com/ksnip/kColorPicker/archive/v%{version}/kColorPicker-%{version}.tar.gz
 
-BuildRequires: cmake
-BuildRequires: qmake5
-BuildRequires: pkgconfig(Qt5Core)
-BuildRequires: pkgconfig(Qt5Gui)
-BuildRequires: pkgconfig(Qt5Test)
-BuildRequires: pkgconfig(Qt5Widgets)
+BuildSystem:	 cmake
+BuildOption:	 -DBUILD_EXAMPLE=ON -DBUILD_WITH_QT6=ON
 
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6Gui)
 BuildRequires: cmake(Qt6Test)
 BuildRequires: cmake(Qt6Widgets)
 
+%rename %name-Qt6
+
 %description
 QToolButton with color popup menu with lets you select a color. The
 popup featues a color dialog button which can be used to add custom
 colors to the popup menu.
 
-%prep
-%autosetup -p1 -n kColorPicker-%{version}
-%cmake \
-	-DBUILD_EXAMPLE=ON \
-	-DBUILD_WITH_QT6=OFF \
-	-G Ninja
+%package devel
 
-cd ..
-export CMAKE_BUILD_DIR=build-qt6
-%cmake \
-	-DBUILD_EXAMPLE=ON \
-	-DBUILD_WITH_QT6=ON \
-	-G Ninja
+Summary:	Development package for %name
+Requires: %name = %version
 
-%build
-%ninja_build -C build
-%ninja_build -C build-qt6
+%description devel
+%summary
 
-%install
-%ninja_install -C build
-%ninja_install -C build-qt6
+%files
+%doc README.md
+%license LICENSE
+%{_libdir}/*
 
-%libpackages
+%files devel
+%{_includedir}/*
+%{_prefix}/lib/debug/*
+%{_libdir}/cmake/*
+
