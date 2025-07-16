@@ -1,6 +1,6 @@
 Name:		%{_lib}kColorPicker
 Version:	0.3.1
-Release:	3
+Release:	4
 Summary:	Qt based Color Picker with popup menu
 License:	GPLv2+
 Group:		Graphical desktop/KDE
