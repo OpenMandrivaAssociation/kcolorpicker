@@ -3,7 +3,7 @@
 
 Name:		kcolorpicker
 Version:	0.3.1
-Release:	5
+Release:	6
 Summary:	Qt based Color Picker with popup menu
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -27,6 +27,7 @@ colors to the popup menu.
 Summary:	Library providing a widget for selecting a color
 Group:		System/Libraries
 %rename kcolorpicker
+%rename %{mklibname kColorPicker-Qt6}
 
 %description -n %{libname}
 Library providing a widget for selecting a color
@@ -35,6 +36,7 @@ Library providing a widget for selecting a color
 Summary:	Development package for %name
 Requires: %{libname} = %{EVRD}
 %rename kcolorpicker-devel
+%rename %{mklibname -d kColorPicker-Qt6}
 
 %description -n %{devname}
 %summary
